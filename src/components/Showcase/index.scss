@@ -1,0 +1,18 @@
+.container {
+  min-height: 100vh;
+  height: 100%;
+  min-width: 100vw;
+  width: 100%;
+}
+
+.showcase-container {
+  background: url("../../assets/images/thumb-1920-928451.jpg") center right
+    no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 950px) {
+  .showcase-container {
+    background-position: right 23% bottom 45%;
+  }
+}

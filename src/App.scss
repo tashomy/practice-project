@@ -1,0 +1,16 @@
+//FONTS
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+// font-family: 'Press Start 2P', cursive;
+//font-family: 'Roboto', sans-serif;
+
+//COMPONENTS STYLE
+@import "./components/Showcase/index.scss";
+@import "./components/Navbar/index.scss";
+
+.App {
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+}
