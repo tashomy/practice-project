@@ -15,7 +15,9 @@ const Navbar = () => {
 
   return (
     <div className="header flex">
-      <div className="logo"></div>
+      <Link to={"/"}>
+        <div className="logo"></div>
+      </Link>
 
       <button
         onClick={handleClick}
@@ -27,7 +29,7 @@ const Navbar = () => {
       <div className="nav">
         <ul id="nav-list" data-visible="false" className="nav-list flex">
           <li className="nav-item">
-            <Link to={"/People"}>
+            <Link to={"/people"}>
               <span>00</span>People
             </Link>
           </li>

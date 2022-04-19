@@ -12,6 +12,7 @@
   top: 0;
   background-color: transparent;
   width: 100%;
+  z-index: 20;
 }
 
 .mobile-nav-toggle {
@@ -32,6 +33,7 @@
   list-style: none;
   min-height: 100%;
   background-color: hsla(0, 0%, 0%, 0.75);
+  z-index: 5000 !important;
 
   a {
     text-decoration: none;

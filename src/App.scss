@@ -2,10 +2,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 // font-family: 'Press Start 2P', cursive;
 //font-family: 'Roboto', sans-serif;
+@font-face {
+  font-family: starWarsJedi;
+  src: url(./assets/fonts/Starjedi.ttf);
+}
+@font-face {
+  font-family: anakinMono;
+  src: url(./assets/fonts/anakinmono.ttf);
+}
+@font-face {
+  font-family: episodeOne;
+  src: url(./assets/fonts/EPISODE1.TTF);
+}
+@font-face {
+  font-family: tieWing;
+  src: url(./assets/fonts/TIE-Wing.ttf);
+}
 
 //COMPONENTS STYLE
 @import "./components/Showcase/index.scss";
 @import "./components/Navbar/index.scss";
+@import "./components/People/index.scss";
 
 .App {
   box-sizing: border-box;
@@ -13,4 +30,8 @@
   padding: 0 !important;
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-family: starWarsJedi !important;
 }

@@ -1,0 +1,75 @@
+.people-container {
+  background: url("../../assets/images/thumb-1920-80007.jpg") no-repeat;
+  background-size: cover;
+  background-position: right 23% bottom 75%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: -10;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  & * {
+    z-index: 10;
+  }
+}
+
+.person-card {
+  padding: 1rem;
+  margin: 0.5rem;
+
+  h3 {
+    font-family: episodeOne;
+    font-size: 1.6rem;
+    letter-spacing: 1.8px;
+    word-spacing: 10px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.3rem;
+    font-weight: 200;
+    padding-inline: 2rem;
+    color: #cbc2c2;
+    span {
+      font-size: 1.4rem;
+      color: #fff;
+    }
+  }
+}
+
+.wrapper-people {
+  width: 100%;
+  justify-content: space-around !important;
+}
+
+@media (max-width: 992px) {
+  .wrapper-people {
+    max-width: 100% !important;
+    padding-top: 5rem;
+
+    & > * {
+      max-width: 70% !important;
+      margin: auto;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@supports (backdrop-filter: blur(0.75em)) {
+  .person-card {
+    color: #fff;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    backdrop-filter: blur(0.2rem);
+  }
+}

@@ -3,16 +3,70 @@
   height: 100%;
   min-width: 100vw;
   width: 100%;
+  padding-top: 15%;
 }
 
 .showcase-container {
-  background: url("../../assets/images/thumb-1920-928451.jpg") center right
+  background: url("../../assets/images/thumb-1920-82395.jpg") center right
     no-repeat;
   background-size: cover;
+}
+
+.main-title {
+  color: #fff;
+  text-shadow: 5px 5px #000;
+  font-family: starWarsJedi;
+  font-size: 4.5rem;
+  margin-left: 3rem;
+}
+
+.main-text {
+  max-width: 50%;
+  margin: 2rem;
+  padding: 1rem;
+  margin-top: 2.5rem;
+  font-size: 1.3rem;
+  color: #fff;
+  background-color: hsla(0, 0%, 0%, 0.45);
+  font-family: "Roboto", sans-serif;
+}
+
+@supports (backdrop-filter: blur(0.75em)) {
+  .main-text {
+    color: #000;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    backdrop-filter: blur(0.7rem);
+  }
 }
 
 @media screen and (max-width: 950px) {
   .showcase-container {
     background-position: right 23% bottom 45%;
+  }
+
+  .main-title {
+    margin-top: 6rem;
+    text-justify: distribute;
+    text-align: center;
+    margin-left: 0 !important;
+    font-size: 3.5rem;
+  }
+
+  .main-text {
+    margin: auto;
+    margin-top: 2rem;
+    min-width: 80%;
+    color: #fff;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 950px) and (min-height: 920px) {
+  .main-text {
+    margin: auto;
+    margin-top: 2rem;
+    min-width: 80%;
+    color: #fff;
+    font-size: 1.4rem;
   }
 }
