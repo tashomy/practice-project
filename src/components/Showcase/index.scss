@@ -10,6 +10,9 @@
   background: url("../../assets/images/thumb-1920-82395.jpg") center right
     no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .main-title {
@@ -18,22 +21,24 @@
   font-family: starWarsJedi;
   font-size: 4.5rem;
   margin-left: 3rem;
+  align-self: flex-start;
 }
 
 .main-text {
   max-width: 50%;
   margin: 2rem;
   padding: 1rem;
-  margin-top: 2.5rem;
+  margin-top: 5.5rem;
   font-size: 1.3rem;
   color: #fff;
   background-color: hsla(0, 0%, 0%, 0.45);
   font-family: "Roboto", sans-serif;
+  text-align: start;
 }
 
 @supports (backdrop-filter: blur(0.75em)) {
   .main-text {
-    color: #000;
+    color: #fff;
     background-color: hsla(0, 0%, 100%, 0.1);
     backdrop-filter: blur(0.7rem);
   }
@@ -50,6 +55,7 @@
     text-align: center;
     margin-left: 0 !important;
     font-size: 3.5rem;
+    align-self: center;
   }
 
   .main-text {

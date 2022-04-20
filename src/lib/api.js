@@ -1,24 +1,18 @@
 export async function getAllPeople() {
-  const response = await fetch("https://swapi.dev/api/people/?format=json");
-  const data = await response.json();
-  console.log(data);
-  //   const docs = data.docs;
-  if (!response.ok) {
-    throw new Error(response.message || "Could not fetch People.");
-  }
+  let url = "https://swapi.dev/api/people/?format=json";
+  let allOfThem = [];
 
-  const transformedPeople = [];
+  do {
+    const res = await fetch(url);
+    const data = await res.json();
 
-  for (const key in data.results) {
-    const personObj = {
-      name: data.results[key].name,
-      birth_year: data.results[key].birth_year,
-      gender: data.results[key].gender,
-      count: data.count,
-    };
+    if (!res.ok) {
+      throw new Error(res.message || "Could not fetch People.");
+    }
 
-    transformedPeople.push(personObj);
-  }
-  //   return transformedPeople;
-  return transformedPeople;
+    url = data.next;
+    allOfThem.push(...data.results);
+  } while (url);
+
+  return allOfThem;
 }
