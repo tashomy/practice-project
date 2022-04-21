@@ -39,7 +39,7 @@ function useHttp(requestFunction, startWithPending = false) {
     async function (requestData) {
       dispatch({ type: "SEND" });
       try {
-        const responseData = await requestFunction(requestData);
+        const responseData = await requestFunction(requestData.page);
         dispatch({ type: "SUCCESS", responseData });
       } catch (error) {
         dispatch({

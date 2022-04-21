@@ -1,0 +1,52 @@
+.paginate {
+  min-width: 40%;
+  margin: auto;
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      //   margin-inline-end: 1rem;
+      background-color: rgb(193, 188, 188);
+      padding: 0;
+      cursor: pointer;
+      border-right: 1px solid darkslategray;
+      // width: 20px;
+      // width: 3%;
+      &:hover {
+        background-color: rgb(227, 225, 225);
+      }
+      a {
+        text-decoration: none;
+        // background-color: #fff;
+        font-size: 1.2rem;
+        display: block;
+        color: #000;
+        min-width: 100% !important;
+        min-height: 100% !important;
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+}
+
+.active-page {
+  background-color: darkslategray;
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .paginate {
+    ul {
+      padding: 0;
+      li {
+        a {
+          font-size: 1rem;
+          padding: 0.5rem 0.7rem;
+        }
+      }
+    }
+  }
+}
