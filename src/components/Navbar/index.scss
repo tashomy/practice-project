@@ -40,13 +40,17 @@
     color: #fff;
     transition: all 0.75s ease;
     &:hover {
-      color: $base-blue;
+      color: goldenrod !important;
     }
     span {
       font-weight: 800;
       margin-inline-end: 0.75em;
     }
   }
+}
+
+.active-nav {
+  color: rgb(247, 218, 105) !important;
 }
 
 @supports (backdrop-filter: blur(0.75em)) {

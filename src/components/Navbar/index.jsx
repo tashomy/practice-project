@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const handleClick = () => {
     const primaryNav = document.querySelector(".nav-list");
@@ -29,34 +29,52 @@ const Navbar = () => {
       <div className="nav">
         <ul id="nav-list" data-visible="false" className="nav-list flex">
           <li className="nav-item">
-            <Link to={"/people"}>
+            <NavLink
+              className={(navData) => (navData.isActive ? "active-nav" : "")}
+              to="/people"
+            >
               <span>00</span>People
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to={"/films"}>
-              <span aria-hidden="true">01</span>Films
-            </Link>
+            <NavLink
+              className={(navData) => (navData.isActive ? "active-nav" : "")}
+              to="/films"
+            >
+              <span>01</span>Films
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to={"/starships"}>
-              <span aria-hidden="true">02</span>Starships
-            </Link>
+            <NavLink
+              className={(navData) => (navData.isActive ? "active-nav" : "")}
+              to="/starships"
+            >
+              <span>02</span>Starships
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to={"/vehicles"}>
-              <span aria-hidden="true">03</span>Vehicles
-            </Link>
+            <NavLink
+              className={(navData) => (navData.isActive ? "active-nav" : "")}
+              to="/vehicles"
+            >
+              <span>03</span>Vehicles
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to={"/species"}>
-              <span aria-hidden="true">04</span>Species
-            </Link>
+            <NavLink
+              className={(navData) => (navData.isActive ? "active-nav" : "")}
+              to="/species"
+            >
+              <span>04</span>Species
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to={"/planets"}>
-              <span aria-hidden="true">05</span>Planets
-            </Link>
+            <NavLink
+              className={(navData) => (navData.isActive ? "active-nav" : "")}
+              to="/planets"
+            >
+              <span>05</span>Planets
+            </NavLink>
           </li>
         </ul>
       </div>
