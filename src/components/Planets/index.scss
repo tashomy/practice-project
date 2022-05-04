@@ -24,3 +24,10 @@
     z-index: 10;
   }
 }
+
+.planets-card {
+  flex-direction: column !important;
+  div {
+    width: 100% !important;
+  }
+}

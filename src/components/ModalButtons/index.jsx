@@ -5,6 +5,7 @@ const ModalButtons = (props) => {
     e.preventDefault();
     const type = e.target.innerHTML.toLowerCase();
     let id = e.target.id;
+    console.log(id);
     if (id == 0) id = 10;
     props.onClick(type, id);
   };
@@ -16,7 +17,7 @@ const ModalButtons = (props) => {
             onClick={getData}
             key={i}
             id={
-              props.page.page === 1
+              props.page === 1
                 ? `${props.url.charAt(props.url.length - 2)}`
                 : `${props.url.charAt(props.url.length - 3)}${props.url.charAt(
                     props.url.length - 2

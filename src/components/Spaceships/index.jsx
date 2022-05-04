@@ -1,17 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import useHttp from "../../hooks/useHttp";
-import { getAllSpaceships, getPageSpaceships } from "../../lib/api";
+import { getPageSpaceships } from "../../lib/api";
 import Loading from "../Loading";
+import ModalButtons from "../ModalButtons";
 import Paginate from "../Pagination";
+import Modal from "../Modal";
+import PilotsStarshipModal from "../DetailModals/PilotsStarshipModal";
 
 const Spaceships = () => {
   const [page, setPage] = useState({ page: 1 });
+  const [type, setType] = useState();
+  const [id, setID] = useState();
   const { sendRequest, status, data, error } = useHttp(getPageSpaceships, true);
 
   useEffect(() => {
-    sendRequest(page);
+    sendRequest(page.page);
   }, [sendRequest, page]);
+
+  const passToModal = (type, id) => {
+    setType(type);
+    setID(id);
+  };
+
+  const closeModal = () => {
+    setType(null);
+    setID(null);
+  };
 
   if (status === "pending") {
     return <Loading />;
@@ -26,17 +41,36 @@ const Spaceships = () => {
 
   return (
     <div className="container starship-container">
+      {type === "pilots" && (
+        <Modal title={"Pilots"} onClick={closeModal}>
+          <PilotsStarshipModal title={"Pilots"} id={id} />
+        </Modal>
+      )}
       <Row className="wrapper-people">
         {data.map((spaceship, i) => {
           return (
-            <Col md={12} lg={5} className="person-card" key={i}>
-              <h3>{spaceship.name}</h3>
-              <p>
-                <span>Manufacturer:</span> {spaceship.manufacturer} <br />
-                <span>Model:</span> {spaceship.model}
-                <br />
-                <span>Crew:</span> {spaceship.crew} <br />
-              </p>
+            <Col md={12} lg={5} className="my-card starship-card" key={i}>
+              <div>
+                <h3>{spaceship.name}</h3>
+                <p>
+                  <span>Manufacturer:</span> {spaceship.manufacturer} <br />
+                  <span>Model:</span> {spaceship.model}
+                  <br />
+                  <span>Crew:</span> {spaceship.crew} <br />
+                  <span>Starship Class:</span> {spaceship.starship_class} <br />
+                </p>
+                {spaceship.pilots.length === 0 && <p>No pilots found</p>}
+              </div>
+              {spaceship.pilots.length !== 0 && (
+                <ModalButtons
+                  className="pilot-starship-modal-btns"
+                  onClick={passToModal}
+                  id={id}
+                  page={page.page}
+                  content={[{ text: "Pilots" }]}
+                  url={spaceship.url}
+                />
+              )}
             </Col>
           );
         })}

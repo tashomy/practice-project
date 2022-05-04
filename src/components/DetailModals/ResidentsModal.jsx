@@ -4,7 +4,7 @@ import { dataForModal } from "../../lib/api";
 import Loading from "../Loading";
 import NotFound from "./NotFound";
 
-const SpeciesModal = (props) => {
+const ResidentsModal = (props) => {
   const [data, setData] = useState(null);
   const {
     sendRequest: modalRequest,
@@ -14,14 +14,15 @@ const SpeciesModal = (props) => {
   } = useHttp(dataForModal);
 
   useEffect(() => {
-    modalRequest("species");
+    modalRequest("people");
   }, [modalRequest]);
 
   useEffect(() => {
     if (modalHookData !== null) {
       let find = modalHookData.filter((obj) => {
         return (
-          obj.films.indexOf(`https://swapi.dev/api/films/${props.id}/`) > -1
+          obj.homeworld.indexOf(`https://swapi.dev/api/planets/${props.id}/`) >
+          -1
         );
       });
       if (find.length === 0) {
@@ -53,13 +54,13 @@ const SpeciesModal = (props) => {
               <div key={key}>
                 <h1 style={{ marginTop: "1.8rem" }}>{item.name}</h1>
                 <p className="movie-modal">
-                  <span>Designation: </span>
-                  {item.designation}
+                  <span>Gender: </span>
+                  {item.gender === "n/a" ? `who knows?` : item.gender}{" "}
                 </p>
                 <p className="movie-modal">
                   {" "}
-                  <span>Language: </span>
-                  {item.language}
+                  <span>Height: </span>
+                  {item.height}
                 </p>
               </div>
             );
@@ -70,4 +71,4 @@ const SpeciesModal = (props) => {
   );
 };
 
-export default SpeciesModal;
+export default ResidentsModal;

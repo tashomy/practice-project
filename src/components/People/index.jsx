@@ -61,7 +61,7 @@ const People = () => {
       <Row className="wrapper-people">
         {data.map((person, i) => {
           return (
-            <Col md={12} lg={5} className="my-card" key={i}>
+            <Col md={12} lg={5} className="my-card person-card" key={i}>
               <div>
                 <h3>{person.name}</h3>
                 <p>
@@ -73,8 +73,9 @@ const People = () => {
                 </p>
               </div>
               <ModalButtons
+                className="person-modal-btns"
                 onClick={passToModal}
-                page={page}
+                page={page.page}
                 url={person.url}
                 content={[
                   { text: "Films" },

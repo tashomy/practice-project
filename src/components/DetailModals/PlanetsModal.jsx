@@ -19,10 +19,9 @@ const PlanetsModal = (props) => {
 
   useEffect(() => {
     if (modalHookData !== null) {
-      console.log(modalHookData, "modalHookData");
       let find = modalHookData.filter((obj) => {
         return (
-          obj.films.indexOf(`https://swapi.dev/api/films${props.id}/`) > -1
+          obj.films.indexOf(`https://swapi.dev/api/films/${props.id}/`) > -1
         );
       });
       if (find.length === 0) {

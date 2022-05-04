@@ -43,3 +43,16 @@
     }
   }
 }
+
+.person-card {
+  flex-direction: column !important;
+  div {
+    width: 100% !important;
+  }
+}
+
+.person-modal-btns {
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  padding-inline: 1.5rem;
+}

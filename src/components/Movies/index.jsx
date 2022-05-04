@@ -19,7 +19,7 @@ const Movies = () => {
   const { sendRequest, status, data, error } = useHttp(getAllMovies, true);
 
   useEffect(() => {
-    sendRequest(page);
+    sendRequest(page.page);
   }, [sendRequest, page]);
 
   const passToModal = (type, id) => {
@@ -60,10 +60,9 @@ const Movies = () => {
         {data.map((movie, i) => {
           return (
             <Col md={12} lg={5} className="my-card movie-card" key={i}>
-              {/* <h3>{movie.name}</h3> */}
+              <h3>{movie.title}</h3>
               <div>
                 <p>
-                  <span>Title:</span> {movie.title} <br />
                   <span>Opening:</span> {movie.opening_crawl}
                   <br />
                   <span>Director:</span> {movie.director} <br />

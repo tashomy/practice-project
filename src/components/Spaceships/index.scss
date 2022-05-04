@@ -24,3 +24,16 @@
     z-index: 10;
   }
 }
+
+.starship-card {
+  flex-direction: column !important;
+  div {
+    width: 100% !important;
+  }
+}
+
+.pilot-starship-modal-btns {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  padding-inline: 1.5rem;
+}
