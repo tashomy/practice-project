@@ -164,3 +164,50 @@ export async function getPagePlanets(pageNum = 1) {
 
   return data.results;
 }
+
+export async function getSingleElementID(url, id) {
+  const preparedUrl = insertBeforeLastOccurrence(url, "?", `${id}`);
+  const res = await fetch(preparedUrl);
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(res.message || "Could not fetch required item.");
+  }
+
+  return data;
+}
+
+export async function getSingleElement(url) {
+  const res = await fetch(url);
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(res.message || "Could not fetch required item.");
+  }
+
+  return data;
+}
+
+export async function dataForModal(typeParam) {
+  let url = `https://swapi.dev/api/${typeParam}/?format=json`;
+  let allOfThem = [];
+
+  do {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(res.message || "Could not fetch Movies.");
+    }
+
+    url = data.next;
+    allOfThem.push(...data.results);
+  } while (url);
+  return allOfThem;
+}
+
+function insertBeforeLastOccurrence(strToSearch, strToFind, strToInsert) {
+  var n = strToSearch.lastIndexOf(strToFind);
+  if (n < 0) return strToSearch;
+  return strToSearch.substring(0, n) + strToInsert + strToSearch.substring(n);
+}

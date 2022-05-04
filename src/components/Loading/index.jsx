@@ -1,9 +1,9 @@
 import React from "react";
 import ReactLoading from "react-loading";
 
-const Loading = () => {
+const Loading = (props) => {
   return (
-    <div className="loading-container">
+    <div className={`loading-container ${props.className}`}>
       <ReactLoading type="bars" color="#fff" height={"100px"} width={"100px"} />
     </div>
   );

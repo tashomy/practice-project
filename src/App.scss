@@ -30,6 +30,9 @@
 @import "./components/Vehicles/index.scss";
 @import "./components/Species/index.scss";
 @import "./components/Planets/index.scss";
+@import "./components/Modal/index.scss";
+@import "./components/DetailModals/index.scss";
+@import "./components/ModalButtons/index.scss";
 
 .App {
   box-sizing: border-box;
@@ -41,4 +44,11 @@
 
 h1 {
   font-family: starWarsJedi !important;
+}
+
+.loading-modal-wrap {
+  min-height: 100%;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
 }

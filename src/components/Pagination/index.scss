@@ -9,14 +9,16 @@
 
     li {
       //   margin-inline-end: 1rem;
-      background-color: rgb(247, 218, 105);
+      background-color: rgba(247, 226, 141, 0.905);
       padding: 0;
+      margin-inline-end: 1px;
       cursor: pointer;
-      border-right: 1px solid darkslategray;
+      // border-right: 1spx solid transparent;
       // width: 20px;
       // width: 3%;
+      border-radius: 10px;
       &:hover {
-        background-color: rgb(227, 225, 225);
+        background-color: rgb(255, 144, 33);
       }
       a {
         text-decoration: none;
@@ -27,6 +29,9 @@
         min-width: 100% !important;
         min-height: 100% !important;
         padding: 0.5rem 1rem;
+        &:hover {
+          color: #fff !important;
+        }
       }
     }
   }
@@ -35,6 +40,7 @@
 .active-page {
   background-color: darkslategray !important;
   color: #fff !important;
+  border-radius: 10px;
 }
 
 @media (max-width: 500px) {
