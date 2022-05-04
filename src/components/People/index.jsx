@@ -61,7 +61,7 @@ const People = () => {
       <Row className="wrapper-people">
         {data.map((person, i) => {
           return (
-            <Col md={12} lg={5} className="person-card" key={i}>
+            <Col md={12} lg={5} className="my-card" key={i}>
               <div>
                 <h3>{person.name}</h3>
                 <p>

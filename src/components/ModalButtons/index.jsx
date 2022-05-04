@@ -9,7 +9,7 @@ const ModalButtons = (props) => {
     props.onClick(type, id);
   };
   return (
-    <div className="btn-div">
+    <div className={`btn-div ${props.className}`}>
       {props.content.map((item, i) => {
         return (
           <button

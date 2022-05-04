@@ -24,3 +24,32 @@
     z-index: 10;
   }
 }
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  div {
+    width: 100% !important;
+  }
+}
+
+.movies-modal-btns {
+  // justify-content: flex-start !important;
+  // align-items: flex-start !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  padding-inline: 1.5rem;
+
+  button {
+    padding: 0.4rem !important;
+    font-size: 1.4rem !important;
+  }
+}
+
+@supports (backdrop-filter: blur(0.75em)) {
+  .movie-card {
+    color: #fff;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    backdrop-filter: blur(0.4rem) !important;
+  }
+}
