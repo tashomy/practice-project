@@ -36,7 +36,7 @@ const ResidentsModal = (props) => {
   if (modalStatus === "pending") {
     return (
       <div className="loading-modal-wrap">
-        <Loading className="loading-modal-wrap" />
+        <Loading color="#000" className="loading-modal-wrap white-loader" />
       </div>
     );
   }

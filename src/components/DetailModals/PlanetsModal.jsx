@@ -35,7 +35,7 @@ const PlanetsModal = (props) => {
   if (modalStatus === "pending") {
     return (
       <div className="loading-modal-wrap">
-        <Loading className="loading-modal-wrap" />
+        <Loading color="#000" className="loading-modal-wrap white-loader" />
       </div>
     );
   }
@@ -45,7 +45,9 @@ const PlanetsModal = (props) => {
 
   return (
     <>
-      {data === "Not found" && <NotFound content="No planets found for this movie!"/>}
+      {data === "Not found" && (
+        <NotFound content="No planets found for this movie!" />
+      )}
       {data !== "Not found" && data !== null && (
         <>
           {data.map((item, key) => {

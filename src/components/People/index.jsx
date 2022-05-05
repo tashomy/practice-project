@@ -26,7 +26,7 @@ const People = () => {
   };
 
   if (status === "pending") {
-    return <Loading />;
+    return <Loading color="#fff" />;
   }
   if (error) {
     return <p>{error}</p>;
@@ -40,7 +40,6 @@ const People = () => {
     setType(null);
     setID(null);
   };
-  console.log(type);
   return (
     <div className="container people-container">
       {type === "films" && (
