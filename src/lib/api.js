@@ -197,7 +197,7 @@ export async function dataForModal(typeParam) {
     const data = await res.json();
 
     if (!res.ok) {
-      throw new Error(res.message || "Could not fetch Movies.");
+      throw new Error(res.message || "Could not fetch data for modal.");
     }
 
     url = data.next;
