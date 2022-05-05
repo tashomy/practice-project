@@ -52,8 +52,8 @@ const VehicleModal = (props) => {
         <>
           {data.map((item, key) => {
             return (
-              <div key={key}>
-                <h1>{item.name}</h1>
+              <div className="detail-modal-div" key={key}>
+                <h2 className="title-modal">{item.name}</h2>
                 <p className="movie-modal">
                   <span>Model: </span>
                   {item.model}

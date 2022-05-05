@@ -17,7 +17,7 @@ const ModalButtons = (props) => {
     <div className={`btn-div ${props.className}`}>
       {props.content.map((item, i) => {
         return (
-          <button onClick={getData} key={i}>
+          <button className="button-86" onClick={getData} key={i}>
             {item.text}
           </button>
         );

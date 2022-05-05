@@ -52,8 +52,8 @@ const SpeciesFilmModal = (props) => {
         <>
           {data.map((item, key) => {
             return (
-              <div key={key}>
-                <h1 style={{ marginTop: "1.8rem" }}>{item.title}</h1>
+              <div className="detail-modal-div" key={key}>
+                <h2 className="title-modal">{item.title}</h2>
                 <p className="movie-modal">
                   <span>Director: </span>
                   {item.director}

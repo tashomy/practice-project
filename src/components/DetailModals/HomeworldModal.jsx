@@ -46,9 +46,9 @@ const HomeworldModal = (props) => {
       {data !== "Not found" && data !== null && (
         <>
           <div>
-            <h1 style={{ marginTop: "1.8rem" }}>
+            <h2 className="title-modal">
               {data.name === "unknown" ? "We don't know!" : data.name}
-            </h1>
+            </h2>
 
             <p className="movie-modal">
               <span>Climate: </span>

@@ -7,7 +7,9 @@ const Modal = (props) => {
       <div className="modal-container">
         <header className="header-modal">
           <h2>{props.title} </h2>
-          <button onClick={props.onClick}>Close</button>
+          <button className="button-86" onClick={props.onClick}>
+            Close
+          </button>
         </header>
         {props.content && <div>{props.content}</div>}
         <div className="content">{props.children}</div>
