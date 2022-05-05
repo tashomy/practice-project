@@ -11,12 +11,21 @@ import MovieModal from "../DetailModals/MovieModal";
 import CharactersModal from "../DetailModals/CharactersModal";
 import PlanetsModal from "../DetailModals/PlanetsModal";
 import SpeciesModal from "../DetailModals/SpeciesModal";
+import img from "../../assets/images/starwars.png";
+import img2 from "../../assets/images/jango-fett.webp";
+import img3 from "../../assets/images/c3po.png";
+import img4 from "../../assets/images/boba-fett.webp";
+import img1 from "../../assets/images/storm-head1.png";
+import img6 from "../../assets/images/storm-head2.png";
+import img7 from "../../assets/images/storm-head3.png";
 
 const Movies = () => {
   const [page, setPage] = useState({ page: 1 });
   const [type, setType] = useState();
   const [id, setID] = useState();
   const { sendRequest, status, data, error } = useHttp(getAllMovies, true);
+
+  const images = [img1, img3, img4, img2, img6, img7];
 
   useEffect(() => {
     sendRequest(page.page);
@@ -56,14 +65,15 @@ const Movies = () => {
           <SpeciesModal title={"species"} id={id} />
         </Modal>
       )}
-      <Row className="wrapper-people">
+      <Row className="wrapper-movies">
         {data.map((movie, i) => {
           return (
-            <Col md={12} lg={5} className="my-card movie-card" key={i}>
+            <div className="movie-card" key={i}>
               <h3>{movie.title}</h3>
               <div>
                 <p>
                   <span>Opening:</span> {movie.opening_crawl}
+                  <br />
                   <br />
                   <span>Director:</span> {movie.director} <br />
                 </p>
@@ -79,7 +89,9 @@ const Movies = () => {
                 page={page.page}
                 url={movie.url}
               />
-            </Col>
+              <img id="star-wars-img" src={img} alt="slicica" />
+              <img id="place-img" src={images[i]} alt="slicica" />
+            </div>
           );
         })}
       </Row>

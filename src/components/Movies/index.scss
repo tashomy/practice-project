@@ -1,36 +1,63 @@
 .movies-container {
-  background: url("../../assets/images/thumb-1920-669177.png") no-repeat;
-  background-size: cover;
-  background-position: right 23% bottom 75%;
+  background-color: #333;
+
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   z-index: -10;
-  padding-top: 11%;
+}
 
-  &::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
-  & * {
-    z-index: 10;
-  }
+.wrapper-movies {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .movie-card {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 2rem !important;
+  padding-block: 2rem !important;
+  border-radius: 10px;
+  width: 60% !important;
   div {
     width: 100% !important;
+    p {
+      color: #333 !important;
+      font-size: 1.3rem;
+      font-weight: 300;
+      padding-inline: 2rem;
+      color: #cbc2c2;
+      span {
+        font-size: 1.4rem;
+        color: #000;
+        font-weight: 400;
+      }
+    }
   }
+
+  h3 {
+    // font-family: episodeOne;
+    color: #000;
+    font-weight: 300;
+    font-size: 1.8rem;
+    letter-spacing: 1.8px;
+    word-spacing: 10px;
+    text-align: center;
+    margin-bottom: 2rem;
+    // margin-bottom: 1.2rem;
+  }
+}
+
+.movie-card:nth-child(odd) {
+  align-self: start !important;
+}
+.movie-card:nth-child(even) {
+  align-self: end !important;
 }
 
 .movies-modal-btns {
@@ -46,10 +73,65 @@
   }
 }
 
-// @supports (backdrop-filter: blur(0.75em)) {
-//   .movie-card {
-//     color: #fff;
-//     background-color: hsla(0, 0%, 100%, 0.1);
-//     backdrop-filter: blur(0.4rem) !important;
-//   }
-// }
+#star-wars-img {
+  position: absolute;
+  top: -10%;
+  right: 0;
+  height: 20%;
+}
+
+#place-img {
+  position: sticky;
+  margin: auto !important;
+  margin-top: 1rem !important;
+  width: 20%;
+}
+
+@supports (backdrop-filter: blur(0.75em)) {
+  .movie-card {
+    color: #fff;
+    background-color: hsla(0, 0%, 100%, 0.6) !important;
+    backdrop-filter: blur(0.4rem) !important;
+  }
+}
+
+@media (max-width: 1350px) {
+  .movie-card {
+    width: 70% !important;
+  }
+  #star-wars-img {
+    top: -5%;
+    height: 15%;
+  }
+}
+
+@media (max-width: 860px) {
+  .movie-card {
+    margin: auto;
+    div {
+      p {
+        font-size: 1.1rem;
+        span {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+  #star-wars-img {
+    top: -5%;
+    height: 10%;
+  }
+  .movies-modal-btns {
+    flex-direction: column !important;
+    button {
+      margin-block: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .movie-card {
+    margin-top: 3rem !important;
+    width: 90% !important;
+  }
+}
