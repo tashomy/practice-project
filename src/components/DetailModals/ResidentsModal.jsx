@@ -46,7 +46,9 @@ const ResidentsModal = (props) => {
 
   return (
     <>
-      {data === "Not found" && <NotFound />}
+      {data === "Not found" && (
+        <NotFound content="No residents found for this planet!" />
+      )}
       {data !== "Not found" && data !== null && (
         <>
           {data.map((item, key) => {

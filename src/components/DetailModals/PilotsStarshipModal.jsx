@@ -47,7 +47,9 @@ const PilotsStarshipModal = (props) => {
 
   return (
     <>
-      {data === "Not found" && <NotFound />}
+      {data === "Not found" && (
+        <NotFound content="This character does not have starship!" />
+      )}
       {data !== "Not found" && data !== null && (
         <>
           {data.map((item, key) => {

@@ -46,7 +46,11 @@ const Species = () => {
     <div className="container species-container">
       {type === "homeworld" && (
         <Modal title={"Homeworld"} onClick={closeModal}>
-          <HomeworldModal title={"Homeworld"} id={id} />
+          <HomeworldModal
+            title={"Homeworld"}
+            id={id}
+            homeworld={data[id - 1]}
+          />
         </Modal>
       )}
       {type === "people" && (

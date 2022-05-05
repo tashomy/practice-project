@@ -45,7 +45,7 @@ const PlanetsModal = (props) => {
 
   return (
     <>
-      {data === "Not found" && <NotFound />}
+      {data === "Not found" && <NotFound content="No planets found for this movie!"/>}
       {data !== "Not found" && data !== null && (
         <>
           {data.map((item, key) => {

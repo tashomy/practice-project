@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useHttp from "../../hooks/useHttp";
-import { dataForModal } from "../../lib/api";
+import { dataForModal, getSingleElement } from "../../lib/api";
 import Loading from "../Loading";
 import NotFound from "./NotFound";
 
@@ -11,22 +11,17 @@ const HomeworldModal = (props) => {
     status: modalStatus,
     data: modalHookData,
     error: modalError,
-  } = useHttp(dataForModal);
+  } = useHttp(getSingleElement);
 
   useEffect(() => {
-    modalRequest("planets");
-  }, [modalRequest]);
+    if (props.homeworld.homeworld) {
+      modalRequest(props.homeworld.homeworld);
+    }
+  }, [modalRequest, props.homeworld]);
 
   useEffect(() => {
     if (modalHookData !== null) {
-      let find = modalHookData.filter((obj) => {
-        return obj.url === `https://swapi.dev/api/planets/${props.id}/`;
-      });
-      if (find.length === 0) {
-        setData("Not found");
-      } else {
-        setData(find);
-      }
+      setData(modalHookData);
     }
   }, [modalHookData, props.id]);
 
@@ -41,31 +36,37 @@ const HomeworldModal = (props) => {
     return <p>{modalError}</p>;
   }
 
+  if (data === null) setData("Not found");
+  console.log(modalHookData, "modalHook");
+  console.log(data, "DAATA");
+
   return (
     <>
-      {data === "Not found" && <NotFound />}
+      {data === "Not found" && (
+        <NotFound content="Homeworld for this species not found!" />
+      )}
       {data !== "Not found" && data !== null && (
         <>
-          {data.map((item, key) => {
-            return (
-              <div key={key}>
-                <h1 style={{ marginTop: "1.8rem" }}>{item.name}</h1>
+          <div>
+            <h1 style={{ marginTop: "1.8rem" }}>
+              {data.name === "unknown" ? "We don't know!" : data.name}
+            </h1>
 
-                <p className="movie-modal">
-                  <span>Climate: </span>
-                  {item.climate}
-                </p>
-                <p className="movie-modal">
-                  <span>Population: </span>
-                  {item.population}
-                </p>
-                <p className="movie-modal">
-                  <span>Diameter: </span>
-                  {item.diameter}
-                </p>
-              </div>
-            );
-          })}
+            <p className="movie-modal">
+              <span>Climate: </span>
+              {data.climate === "unknown" ? "We don't know!" : data.climate}
+            </p>
+            <p className="movie-modal">
+              <span>Population: </span>
+              {data.population === "unknown"
+                ? "We don't know!"
+                : data.population}
+            </p>
+            <p className="movie-modal">
+              <span>Diameter: </span>
+              {data.diameter === "0" ? "We don't know!" : data.diameter}
+            </p>
+          </div>
         </>
       )}
     </>

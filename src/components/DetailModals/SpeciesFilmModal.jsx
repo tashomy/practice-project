@@ -45,7 +45,9 @@ const SpeciesFilmModal = (props) => {
 
   return (
     <>
-      {data === "Not found" && <NotFound />}
+      {data === "Not found" && (
+        <NotFound content="No movies found for this species!" />
+      )}
       {data !== "Not found" && data !== null && (
         <>
           {data.map((item, key) => {
