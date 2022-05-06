@@ -51,18 +51,18 @@ const Movies = () => {
   return (
     <div className="container movies-container">
       {type === "characters" && (
-        <Modal title={"characters"} onClick={closeModal}>
-          <CharactersModal title={"characters"} id={id} />
+        <Modal title={"Characters"} onClick={closeModal}>
+          <CharactersModal title={"Characters"} id={id} />
         </Modal>
       )}
       {type === "planets" && (
-        <Modal title={"planets"} onClick={closeModal}>
-          <PlanetsModal title={"planets"} id={id} />
+        <Modal title={"Planets"} onClick={closeModal}>
+          <PlanetsModal title={"Planets"} id={id} />
         </Modal>
       )}
       {type === "species" && (
-        <Modal title={"species"} onClick={closeModal}>
-          <SpeciesModal title={"species"} id={id} />
+        <Modal title={"Species"} onClick={closeModal}>
+          <SpeciesModal title={"Species"} id={id} />
         </Modal>
       )}
       <Row className="wrapper-movies">

@@ -34,8 +34,8 @@ const PlanetsModal = (props) => {
 
   if (modalStatus === "pending") {
     return (
-      <div className="loading-modal-wrap">
-        <Loading color="#000" className="loading-modal-wrap white-loader" />
+      <div className="loading-modal-wrap ">
+        <Loading color="#fff" className="loading-modal-wrap grey-loader" />
       </div>
     );
   }

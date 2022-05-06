@@ -19,17 +19,25 @@
   background-color: #fff;
   color: #000;
   max-height: 60%;
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  border: 5px solid #fff;
+  background-color: #333;
   .header-modal {
-    min-width: 100%;
+    // min-width: 100%;
+    width: 60%;
+    border-radius: 10px;
   }
 }
 
 .header-modal {
-  background-color: blanchedalmond;
+  top: 10%;
+  left: 20%;
+  position: fixed;
+  z-index: 200;
+  background-color: #f3f3f3;
   padding: 1.1rem;
   display: flex;
   justify-content: space-between;
@@ -38,6 +46,7 @@
     margin: 0;
     color: #333;
     font-weight: 300;
+    font-size: 1.4rem;
   }
   // button {
   //   border: none;
@@ -58,6 +67,8 @@
 .content {
   padding: 1rem;
   width: 100%;
+  background-color: #333;
+  color: #d7d4d4;
 }
 
 .actions {

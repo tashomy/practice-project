@@ -48,7 +48,7 @@ const Planets = () => {
       <Row className="wrapper-people">
         {data.map((vehicle, i) => {
           return (
-            <Col md={12} lg={5} className="my-card planets-card" key={i}>
+            <Col md={5} lg={3} className="my-card planets-card" key={i}>
               <div>
                 <h3>{vehicle.name}</h3>
                 <p>

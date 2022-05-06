@@ -43,7 +43,7 @@ const People = () => {
   return (
     <div className="container people-container">
       {type === "films" && (
-        <Modal title={"Movies"} onClick={closeModal}>
+        <Modal title={"Films"} onClick={closeModal}>
           <MovieModal title={"Films"} id={id} />
         </Modal>
       )}
@@ -68,6 +68,19 @@ const People = () => {
                   <br />
                   <span>Gender:</span>{" "}
                   {person.gender === "n/a" ? `who knows?` : person.gender}{" "}
+                  <br />
+                  <span>Height:</span> {person.height}
+                  <br />
+                  <span>Mass:</span> {person.mass}
+                  <br />
+                  <span>Eye color:</span> {person.eye_color}
+                  <br />
+                  <span>Hair color:</span>{" "}
+                  {person.hair_color === "n/a"
+                    ? "who knows"
+                    : person.hair_color}
+                  <br />
+                  <span>Skin color:</span> {person.skin_color}
                   <br />
                 </p>
               </div>
