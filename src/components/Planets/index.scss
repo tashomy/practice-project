@@ -69,3 +69,13 @@
   bottom: 0;
   left: 0;
 }
+
+.search-planets {
+  margin: auto !important;
+  margin-bottom: 1rem !important;
+  min-width: fit-content !important;
+  flex-direction: column !important;
+  div {
+    width: 100% !important;
+  }
+}

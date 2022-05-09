@@ -7,11 +7,15 @@ import Paginate from "../Pagination";
 import ModalButtons from "../ModalButtons/index";
 import ResidentsModal from "../DetailModals/ResidentsModal";
 import Modal from "../Modal";
+import NotFound from "../DetailModals/NotFound";
+import Search from "../Search";
 
 const Planets = () => {
   const [page, setPage] = useState({ page: 1 });
   const [type, setType] = useState();
   const [id, setID] = useState();
+  const [search, setSearch] = useState(null);
+  const [notFound, setNoFound] = useState(false);
   const { sendRequest, status, data, error } = useHttp(getPagePlanets, true);
 
   useEffect(() => {
@@ -27,6 +31,25 @@ const Planets = () => {
     setType(null);
     setID(null);
   };
+
+  const onClick = (value) => {
+    setNoFound(false);
+    setSearch(null);
+    if (value === "") return;
+    const url = `https://swapi.dev/api/planets/?search=${value}`;
+    fetch(url)
+      .then((data) => {
+        console.log(data);
+        const res = data.json();
+        return res;
+      })
+      .then((result) => {
+        console.log(result);
+        if (result.count == 0) setNoFound(true);
+        else setSearch(result.results);
+      });
+  };
+
   if (status === "pending") {
     return <Loading />;
   }
@@ -40,20 +63,56 @@ const Planets = () => {
 
   return (
     <div className="container planets-container">
+      {notFound && <NotFound className="search-not-found" />}
+
       {type === "residents" && (
         <Modal title={"Residents"} onClick={closeModal}>
           <ResidentsModal title={"Residents"} id={id} />
         </Modal>
       )}
-      <Carousel>
-        {data.map((vehicle, i) => {
-          return (
-            <Carousel.Item key={i}>
-              {/* <img
+      <Search emptyValue={sendRequest} page={page.page} onClick={onClick} />
+
+      {!notFound && search === null && (
+        <Carousel>
+          {data.map((vehicle, i) => {
+            return (
+              <Carousel.Item key={i}>
+                {/* <img
                 src="https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
                 alt=""
               /> */}
-              <div className="my-card planets-card">
+                <div className="my-card planets-card">
+                  <h3>{vehicle.name}</h3>
+                  <p>
+                    <span>Population:</span> {vehicle.population} <br />
+                    <span>Climate:</span> {vehicle.climate}
+                    <br />
+                    <span>Terrain:</span> {vehicle.terrain} <br />
+                  </p>
+                </div>
+                <ModalButtons
+                  className="pilot-starship-modal-btns"
+                  onClick={passToModal}
+                  id={id}
+                  page={page.page}
+                  content={[{ text: "Residents" }]}
+                  url={vehicle.url}
+                />
+              </Carousel.Item>
+            );
+          })}
+        </Carousel>
+      )}
+      {search !== null && (
+        <Row>
+          {search.map((vehicle, i) => {
+            return (
+              <Col md={12} lg={5} key={i} className="my-card search-planets">
+                {/* <img
+                src="https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
+                alt=""
+              /> */}
+
                 <h3>{vehicle.name}</h3>
                 <p>
                   <span>Population:</span> {vehicle.population} <br />
@@ -61,25 +120,29 @@ const Planets = () => {
                   <br />
                   <span>Terrain:</span> {vehicle.terrain} <br />
                 </p>
-              </div>
-              <ModalButtons
-                className="pilot-starship-modal-btns"
-                onClick={passToModal}
-                id={id}
-                page={page.page}
-                content={[{ text: "Residents" }]}
-                url={vehicle.url}
-              />
-            </Carousel.Item>
-          );
-        })}
-      </Carousel>
-      <Paginate
-        className="planets-paginate"
-        change={changePage}
-        num={6}
-        pageProp={page.page}
-      />
+
+                <ModalButtons
+                  className="pilot-starship-modal-btns-search"
+                  onClick={passToModal}
+                  id={id}
+                  page={page.page}
+                  content={[{ text: "Residents" }]}
+                  url={vehicle.url}
+                />
+              </Col>
+            );
+          })}
+        </Row>
+      )}
+
+      {!notFound && search === null && (
+        <Paginate
+          className="planets-paginate"
+          change={changePage}
+          num={6}
+          pageProp={page.page}
+        />
+      )}
     </div>
   );
 };
