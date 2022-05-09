@@ -36,4 +36,9 @@
   justify-content: flex-start !important;
   align-items: flex-start !important;
   padding-inline: 1.5rem;
+  .button-86 {
+    &::before {
+      background-color: rgb(135, 130, 124) !important;
+    }
+  }
 }

@@ -37,4 +37,9 @@
   flex-direction: row !important;
   justify-content: space-between !important;
   padding-inline: 1.5rem;
+  .button-86 {
+    &::before {
+      background-color: #286b71a5;
+    }
+  }
 }

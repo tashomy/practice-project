@@ -19,7 +19,10 @@ const Paginate = (props) => {
     );
   }
   return (
-    <nav className="paginate" aria-label="Page navigation example">
+    <nav
+      className={`paginate ${props.className}`}
+      aria-label="Page navigation example"
+    >
       <ul>{items}</ul>
     </nav>
   );

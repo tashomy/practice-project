@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Carousel, Col, Row } from "react-bootstrap";
 import useHttp from "../../hooks/useHttp";
 import { getAllPlanets, getPagePlanets } from "../../lib/api";
 import Loading from "../Loading";
@@ -45,11 +45,15 @@ const Planets = () => {
           <ResidentsModal title={"Residents"} id={id} />
         </Modal>
       )}
-      <Row className="wrapper-people">
+      <Carousel>
         {data.map((vehicle, i) => {
           return (
-            <Col md={5} lg={3} className="my-card planets-card" key={i}>
-              <div>
+            <Carousel.Item key={i}>
+              {/* <img
+                src="https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
+                alt=""
+              /> */}
+              <div className="my-card planets-card">
                 <h3>{vehicle.name}</h3>
                 <p>
                   <span>Population:</span> {vehicle.population} <br />
@@ -66,11 +70,16 @@ const Planets = () => {
                 content={[{ text: "Residents" }]}
                 url={vehicle.url}
               />
-            </Col>
+            </Carousel.Item>
           );
         })}
-      </Row>
-      <Paginate change={changePage} num={6} pageProp={page.page} />
+      </Carousel>
+      <Paginate
+        className="planets-paginate"
+        change={changePage}
+        num={6}
+        pageProp={page.page}
+      />
     </div>
   );
 };

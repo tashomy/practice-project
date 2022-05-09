@@ -45,14 +45,47 @@
 }
 
 .person-card {
-  flex-direction: column !important;
+  flex-direction: row !important;
   div {
     width: 100% !important;
   }
 }
 
+.person-card:nth-child(1),
+.person-card:nth-child(4),
+.person-card:nth-child(5),
+.person-card:nth-child(8),
+.person-card:nth-child(9) {
+  border-radius: 0 50px 0 50px;
+}
+
+@supports (backdrop-filter: blur(0.75em)) {
+  .person-card:nth-child(2),
+  .person-card:nth-child(3),
+  .person-card:nth-child(6),
+  .person-card:nth-child(7),
+  .person-card:nth-child(10) {
+    color: #fff;
+    border-radius: 50px 0 50px 0;
+    background-color: hsla(0, 0%, 100%, 0.2);
+    backdrop-filter: blur(0.2rem);
+    .person-modal-btns {
+      .button-86 {
+        &::before {
+          background-color: #28282d !important;
+        }
+      }
+    }
+  }
+}
+
 .person-modal-btns {
-  flex-direction: row !important;
-  justify-content: space-between !important;
+  flex-direction: column !important;
+  justify-content: space-around !important;
   padding-inline: 1.5rem;
+  .button-86 {
+    &::before {
+      background-color: rgb(135, 130, 124) !important;
+    }
+  }
 }
