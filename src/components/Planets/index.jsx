@@ -73,15 +73,11 @@ const Planets = () => {
       <Search emptyValue={sendRequest} page={page.page} onClick={onClick} />
 
       {!notFound && search === null && (
-        <Carousel>
+        <Carousel slide={false}>
           {data.map((vehicle, i) => {
             return (
               <Carousel.Item key={i}>
-                {/* <img
-                src="https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
-                alt=""
-              /> */}
-                <div className="my-card planets-card">
+                <div className="my-card planets-card animate__animated animate__flipInY ">
                   <h3>{vehicle.name}</h3>
                   <p>
                     <span>Population:</span> {vehicle.population} <br />

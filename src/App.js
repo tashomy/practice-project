@@ -1,5 +1,6 @@
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "animate.css";
 import Showcase from "./components/Showcase";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router";
@@ -9,7 +10,6 @@ import Spaceships from "./components/Spaceships";
 import Vehicles from "./components/Vehicles";
 import Species from "./components/Species";
 import Planets from "./components/Planets";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
