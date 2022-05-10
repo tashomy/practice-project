@@ -1,7 +1,8 @@
 .movies-container {
-  background-color: #333;
-
-  color: #fff;
+  // background-color: #333;
+  background: url("../../assets/images/darkaurora.jpg") center center repeat-y;
+  background-size: cover;
+  background-position: right 56% bottom 75%;
   display: flex;
   align-items: center;
   justify-content: space-between;

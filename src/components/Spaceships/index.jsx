@@ -73,10 +73,10 @@ const Spaceships = () => {
       <Search emptyValue={sendRequest} page={page.page} onClick={onClick} />
 
       {!notFound && search === null && (
-        <Row className="wrapper-people">
+        <Row className="wrapper-peoples">
           {data.map((spaceship, i) => {
             return (
-              <Col md={12} lg={5} className="my-card starship-card" key={i}>
+              <Col md={12} lg={4} className="my-card starship-card" key={i}>
                 <div>
                   <h3>{spaceship.name}</h3>
                   <p>

@@ -73,7 +73,7 @@ const Vehicles = () => {
         <Row className="wrapper-people">
           {data.map((vehicle, i) => {
             return (
-              <Col md={12} lg={5} className="my-card starship-card" key={i}>
+              <Col md={12} lg={4} className="my-card starship-card" key={i}>
                 <div>
                   <h3>{vehicle.name}</h3>
                   <p>
@@ -103,7 +103,7 @@ const Vehicles = () => {
         <Row className="wrapper-people">
           {search.map((vehicle, i) => {
             return (
-              <Col md={12} lg={5} className="my-card starship-card" key={i}>
+              <Col md={12} lg={4} className="my-card starship-card" key={i}>
                 <div>
                   <h3>{vehicle.name}</h3>
                   <p>

@@ -95,17 +95,17 @@ const Species = () => {
                 <div>
                   <h3>{species.name}</h3>
                   <p>
-                    <span>Language:</span>{" "}
+                    <span>Language:</span>
                     {species.language === "n/a"
                       ? "we don't know"
-                      : species.language}{" "}
+                      : species.language}
                     <br />
                     <span>Classification:</span> {species.classification} <br />
                     <span>Designation:</span> {species.designation} <br />
-                    <span>Skin Colors:</span>{" "}
+                    <span>Skin Colors:</span>
                     {species.skin_colors === "n/a"
                       ? "we don't know"
-                      : species.skin_colors}{" "}
+                      : species.skin_colors}
                     <br />
                   </p>
                 </div>

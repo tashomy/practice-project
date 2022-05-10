@@ -73,21 +73,32 @@ const Planets = () => {
       <Search emptyValue={sendRequest} page={page.page} onClick={onClick} />
 
       {!notFound && search === null && (
-        <Carousel slide={false}>
+        <Carousel slide={false} className="wrapper-people">
           {data.map((vehicle, i) => {
             return (
               <Carousel.Item key={i}>
-                <div className="my-card planets-card animate__animated animate__flipInY ">
+                <div className="my-card planets-card animate__animated animate__zoomInRight">
                   <h3>{vehicle.name}</h3>
                   <p>
-                    <span>Population:</span> {vehicle.population} <br />
-                    <span>Climate:</span> {vehicle.climate}
+                    <span>Population: </span>
+                    {vehicle.population !== "unknown"
+                      ? vehicle.population
+                      : "We don't know"}
                     <br />
-                    <span>Terrain:</span> {vehicle.terrain} <br />
+                    <span>Climate: </span>
+                    {vehicle.climate !== "unknown"
+                      ? vehicle.climate
+                      : "We don't know"}
+                    <br />
+                    <span>Terrain: </span>
+                    {vehicle.terrain !== "unknown"
+                      ? vehicle.terrain
+                      : "We don't know"}
+                    <br />
                   </p>
                 </div>
                 <ModalButtons
-                  className="pilot-starship-modal-btns"
+                  className="planet-modal-btns animate__animated animate__rotateInDownLeft"
                   onClick={passToModal}
                   id={id}
                   page={page.page}

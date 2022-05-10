@@ -27,13 +27,26 @@
 
 .starship-card {
   flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-inline: 0.5rem;
+  margin: auto;
+  margin-block: 1rem;
+  // margin-inline: 0.5rem;
+  height: 500px !important;
   div {
     width: 100% !important;
+    // margin-top: 20rem !important;
   }
 }
 
+.starship-card.col-lg-4 {
+  width: 30% !important;
+}
+
 .pilot-starship-modal-btns {
-  justify-content: flex-start !important;
+  height: min-content !important;
+  // justify-content: flex-start !important;
   align-items: flex-start !important;
   padding-inline: 1.5rem;
   .button-86 {
