@@ -8,10 +8,10 @@ const Search = (props) => {
     props.onClick(input.value);
   };
   return (
-    <div className="search-container">
-      <input type="text" id="search-input" />
+    <div className={`search-container ${props.className}`}>
+      <input placeholder={props.placeholder} type="text" id="search-input" />
       <button id="search-btn" onClick={handleSearch}>
-        Search
+        {props.content}
       </button>
     </div>
   );

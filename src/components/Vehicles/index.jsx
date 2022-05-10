@@ -67,7 +67,12 @@ const Vehicles = () => {
           <PilotsVehiclesModal title={"Pilots"} id={id} />
         </Modal>
       )}
-      <Search emptyValue={sendRequest} page={page.page} onClick={onClick} />
+      <Search
+        content={"Search"}
+        emptyValue={sendRequest}
+        page={page.page}
+        onClick={onClick}
+      />
 
       {!notFound && search === null && (
         <Row className="wrapper-people">

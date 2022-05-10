@@ -70,7 +70,12 @@ const Planets = () => {
           <ResidentsModal title={"Residents"} id={id} />
         </Modal>
       )}
-      <Search emptyValue={sendRequest} page={page.page} onClick={onClick} />
+      <Search
+        content={"Search"}
+        emptyValue={sendRequest}
+        page={page.page}
+        onClick={onClick}
+      />
 
       {!notFound && search === null && (
         <Carousel slide={false} className="wrapper-people">
@@ -114,7 +119,7 @@ const Planets = () => {
         <Row>
           {search.map((vehicle, i) => {
             return (
-              <Col md={12} lg={5} key={i} className="my-card search-planets">
+              <Col md={12} lg={4} key={i} className="my-card search-planets">
                 {/* <img
                 src="https://images.unsplash.com/photo-1648737966661-22e0c69d5aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
                 alt=""

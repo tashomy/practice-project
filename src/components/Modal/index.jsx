@@ -4,7 +4,7 @@ const Modal = (props) => {
   return (
     <>
       <div className="backdrop"></div>
-      <div className="modal-container">
+      <div className={`modal-container ${props.className}`}>
         <header className="header-modal">
           <h2>{props.title} </h2>
           <button className="button-86" onClick={props.onClick}>

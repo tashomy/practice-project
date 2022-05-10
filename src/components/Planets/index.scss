@@ -85,11 +85,14 @@
   margin: auto !important;
   margin-bottom: 1rem !important;
   min-width: min-content !important;
-
   flex-direction: column !important;
   div {
     width: 100% !important;
   }
+}
+
+.search-planets.col-lg-4 {
+  width: 30%;
 }
 
 .animate__animated.animate__zoomInRight {
