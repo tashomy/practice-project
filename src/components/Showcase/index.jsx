@@ -7,7 +7,9 @@ const Showcase = () => {
   const handleClick = (e) => {
     e.preventDefault();
     setModal(true);
-    setName(document.querySelector("#showcase-input").value);
+    const value = document.querySelector("#showcase-input").value;
+    if (value !== "") setName(`${value}, I am your father.`);
+    else setName("Please provide a name");
   };
   const closeModal = () => {
     setModal(false);
@@ -16,10 +18,10 @@ const Showcase = () => {
     <div className="container showcase-container">
       {modal && (
         <Modal
-          className="showcase-modal animate__animated animate__zoomInRight"
+          className="showcase-modal animate__animated animate__tada"
           onClick={closeModal}
         >
-          {name}, I am your father
+          {name}
         </Modal>
       )}
       <h1 className="main-title">Star Wars fan page</h1>

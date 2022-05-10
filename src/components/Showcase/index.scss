@@ -90,6 +90,10 @@
   }
 }
 
+.animate__tada {
+  --animate-duration: 1.6s;
+}
+
 @supports (backdrop-filter: blur(0.75em)) {
   .main-text {
     color: #fff;
