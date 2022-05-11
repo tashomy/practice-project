@@ -36,3 +36,15 @@
   width: 80%;
   left: 10%;
 }
+
+@media (max-width: 375px) {
+  .search-container {
+    width: 80%;
+  }
+  #search-input {
+    width: 60%;
+  }
+  #search-btn {
+    width: 40%;
+  }
+}

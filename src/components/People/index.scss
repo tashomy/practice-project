@@ -31,21 +31,8 @@
   justify-content: space-around !important;
 }
 
-@media (max-width: 992px) {
-  .wrapper-people {
-    max-width: 100% !important;
-    padding-top: 5rem;
-
-    & > * {
-      max-width: 70% !important;
-      margin: auto;
-      margin-bottom: 2rem;
-    }
-  }
-}
-
 .person-card {
-  flex-direction: row !important;
+  flex-direction: row;
   margin-block: 1rem;
   div {
     width: 100% !important;
@@ -58,6 +45,71 @@
 .person-card:nth-child(8),
 .person-card:nth-child(9) {
   border-radius: 0 50px 0 50px;
+}
+
+.person-modal-btns {
+  flex-direction: column;
+  justify-content: space-around !important;
+  padding-inline: 1.5rem;
+  .button-86 {
+    &::before {
+      background-color: rgb(135, 130, 124) !important;
+    }
+  }
+}
+
+@media (max-width: 1375px) {
+  .search-container {
+    margin-top: 3rem !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .wrapper-people {
+    max-width: 100% !important;
+    padding-top: 2rem;
+
+    & > * {
+      max-width: 70% !important;
+      margin: auto;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    margin-top: 5rem !important;
+  }
+
+  .person-card {
+    flex-direction: column !important;
+    min-width: 90% !important;
+    text-align: center;
+    h3 {
+      font-size: 1.2rem !important;
+    }
+    p {
+      font-size: 1rem !important;
+      span {
+        font-size: 1rem !important;
+      }
+    }
+  }
+
+  .person-modal-btns {
+    justify-content: space-around !important;
+    padding-inline: 1rem !important;
+    .button-86 {
+      width: 80px;
+      font-size: 1rem;
+      padding: 5px 10px;
+      margin-bottom: 1rem;
+      &::before {
+        background-color: rgb(135, 130, 124) !important;
+      }
+    }
+  }
 }
 
 @supports (backdrop-filter: blur(0.75em)) {
@@ -76,17 +128,6 @@
           background-color: #28282d !important;
         }
       }
-    }
-  }
-}
-
-.person-modal-btns {
-  flex-direction: column !important;
-  justify-content: space-around !important;
-  padding-inline: 1.5rem;
-  .button-86 {
-    &::before {
-      background-color: rgb(135, 130, 124) !important;
     }
   }
 }

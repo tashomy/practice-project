@@ -103,3 +103,55 @@
   position: absolute;
   bottom: 0;
 }
+
+@media (max-width: 1000px) {
+  .carousel-item {
+    width: 80% !important;
+    left: 10% !important;
+    top: -20% !important;
+  }
+  .planets-card {
+    padding-bottom: 3rem !important;
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .carousel {
+    width: 80%;
+  }
+  .carousel-item {
+    width: 100% !important;
+    left: 0 !important;
+    top: -20% !important;
+  }
+  .planets-card {
+    padding-bottom: 3rem !important;
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel {
+    width: 90%;
+  }
+
+  .planets-card {
+    h3 {
+      font-size: 1.2rem !important;
+    }
+    p {
+      span {
+        font-size: 1.2rem !important;
+      }
+    }
+  }
+
+  .planet-modal-btns {
+    .button-86 {
+      width: 60px !important;
+      padding: 5px 10px !important;
+      font-size: 1rem;
+    }
+  }
+}

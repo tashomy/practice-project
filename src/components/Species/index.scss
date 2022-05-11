@@ -44,3 +44,12 @@
     }
   }
 }
+
+@media (max-width: 1300px) {
+  .species-modal-btns {
+    flex-direction: column !important;
+    .button-86 {
+      margin-bottom: 1rem;
+    }
+  }
+}

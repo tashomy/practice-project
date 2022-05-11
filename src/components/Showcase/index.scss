@@ -54,6 +54,10 @@
   color: #fff !important;
   &:focus {
     outline: none !important;
+    background-color: rgba(255, 255, 255, 0.552) !important;
+  }
+  &:outline {
+    background-color: rgba(255, 255, 255, 0.552) !important;
   }
 }
 
@@ -132,5 +136,24 @@
     min-width: 80%;
     color: #fff;
     font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-title {
+    font-size: 2.6rem;
+  }
+  #showcase-input {
+    width: 60%;
+  }
+
+  #showcase-btn {
+    width: 40%;
+  }
+
+  #showcase-input,
+  #showcase-btn {
+    padding-inline: 1rem;
+    // width: 40%;
   }
 }

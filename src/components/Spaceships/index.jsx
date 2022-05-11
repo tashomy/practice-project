@@ -81,7 +81,7 @@ const Spaceships = () => {
         <Row className="wrapper-peoples">
           {data.map((spaceship, i) => {
             return (
-              <Col md={12} lg={4} className="my-card starship-card" key={i}>
+              <Col md={6} lg={4} className="my-card starship-card" key={i}>
                 <div>
                   <h3>{spaceship.name}</h3>
                   <p>
