@@ -78,7 +78,7 @@ const Spaceships = () => {
       />
 
       {!notFound && search === null && (
-        <Row className="wrapper-peoples">
+        <Row className="wrapper-people">
           {data.map((spaceship, i) => {
             return (
               <Col md={6} lg={4} className="my-card starship-card" key={i}>

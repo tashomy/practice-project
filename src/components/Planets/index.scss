@@ -63,10 +63,6 @@
   left: 20% !important;
 }
 
-.carousel-indicators {
-  // bottom: -10% !important;
-}
-
 .planet-modal-btns {
   position: absolute !important;
   bottom: 0 !important;
@@ -100,7 +96,7 @@
 }
 
 .planets-paginate {
-  position: absolute;
+  position: sticky;
   bottom: 0;
 }
 
@@ -137,6 +133,8 @@
   }
 
   .planets-card {
+    padding-block: 3rem !important;
+    padding-inline: 0.3rem !important;
     h3 {
       font-size: 1.2rem !important;
     }
@@ -153,5 +151,11 @@
       padding: 5px 10px !important;
       font-size: 1rem;
     }
+  }
+}
+
+@media (max-height: 800px) {
+  .carousel-indicators {
+    display: none !important;
   }
 }

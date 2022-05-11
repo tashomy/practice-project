@@ -55,3 +55,17 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  .starship-card {
+    padding-inline: 0.1rem !important;
+  }
+
+  .pilot-starship-modal-btns {
+    .button-86 {
+      width: 80px;
+      padding: 5px 10px;
+      font-size: 1rem;
+    }
+  }
+}
