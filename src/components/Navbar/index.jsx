@@ -76,6 +76,14 @@ const Navbar = () => {
               <span>05</span>Planets
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink
+              className={(navData) => (navData.isActive ? "active-nav" : "")}
+              to="/contact"
+            >
+              <span>06</span>Contact
+            </NavLink>
+          </li>
         </ul>
       </div>
     </div>

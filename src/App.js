@@ -10,6 +10,7 @@ import Spaceships from "./components/Spaceships";
 import Vehicles from "./components/Vehicles";
 import Species from "./components/Species";
 import Planets from "./components/Planets";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route element={<Vehicles />} path={"/vehicles"} />
         <Route element={<Species />} path={"/species"} />
         <Route element={<Planets />} path={"/planets"} />
+        <Route element={<Contact />} path={"/contact"} />
       </Routes>
     </div>
   );

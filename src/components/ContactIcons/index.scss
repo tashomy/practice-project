@@ -1,0 +1,17 @@
+.contact-icons-wrap {
+  position: absolute;
+  bottom: -20%;
+  left: 90% !important;
+  min-width: fit-content;
+  & > * {
+    padding-inline: 0.3rem;
+  }
+
+  a {
+    svg {
+      &:hover {
+        fill: #2471a3 !important;
+      }
+    }
+  }
+}
